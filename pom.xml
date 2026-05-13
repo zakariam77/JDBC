@@ -70,7 +70,13 @@
       <version>2.22.0</version>
       <scope>compile</scope>
     </dependency>
-    <!-- Source: https://mvnrepository.com/artifact/de.openkeyword/autoit -->
+
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-testng</artifactId>
+      <version>2.25.0</version>
+    </dependency>
+
   </dependencies>
   <build>
     <pluginManagement>
@@ -79,6 +85,11 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.5.5</version>
+        </plugin>
+        <plugin>
+          <groupId>io.qameta.allure</groupId>
+          <artifactId>allure-maven</artifactId>
+          <version>2.12.0</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -108,6 +119,7 @@
     <profile>
       <id>SqlTest</id>
       <build>
+        <defaultGoal>test pass with no errors</defaultGoal>
         <pluginManagement>
           <plugins>
             <plugin>
@@ -125,4 +137,6 @@
       </build>
     </profile>
   </profiles>
+
 </project>
+

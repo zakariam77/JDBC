@@ -131,3 +131,59 @@
 2026-05-10 19:07:09 INFO  com.zproject.UltimateExampleTest - logging in with username and password: opopo / opopopass
 2026-05-10 19:07:12 INFO  com.zproject.UltimateExampleTest - logging in with username and password: mvnvmv / mvnvmvpass
 2026-05-10 19:07:14 INFO  com.zproject.UltimateExampleTest - logging in with username and password: mmdd / mmmdpass
+2026-05-13 20:22:56 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:22:56 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:22:56 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:22:57 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:22:58 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:22:58 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:22:58 INFO  com.zproject.UltimateExampleTest - logging in with username and password: hank / hankpass
+2026-05-13 20:22:58 INFO  com.zproject.UltimateExampleTest - logging in with username and password: mvnvmv / mvnvmvpass
+2026-05-13 20:22:58 INFO  com.zproject.UltimateExampleTest - logging in with username and password: mmdd / mmmdpass
+2026-05-13 20:22:59 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:23:00 INFO  com.zproject.UltimateExampleTest - logging in with username and password: alex / alexpass
+2026-05-13 20:23:01 INFO  com.zproject.UltimateExampleTest - logging in with username and password: merry / merrypass
+2026-05-13 20:23:01 INFO  com.zproject.UltimateExampleTest - logging in with username and password: opopo / opopopass
+2026-05-13 20:23:02 INFO  com.zproject.UltimateExampleTest - logging in with username and password: nano / nanopass
+2026-05-13 20:40:31 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:40:31 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:40:31 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:40:31 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:40:31 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:40:31 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:40:31 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:40:37 INFO  com.zproject.UltimateExampleTest - logging in with username and password: mmdd / mmmdpass
+2026-05-13 20:40:38 INFO  com.zproject.UltimateExampleTest - logging in with username and password: opopo / opopopass
+2026-05-13 20:40:38 INFO  com.zproject.UltimateExampleTest - logging in with username and password: mvnvmv / mvnvmvpass
+2026-05-13 20:40:38 INFO  com.zproject.UltimateExampleTest - logging in with username and password: merry / merrypass
+2026-05-13 20:40:38 INFO  com.zproject.UltimateExampleTest - logging in with username and password: alex / alexpass
+2026-05-13 20:40:38 INFO  com.zproject.UltimateExampleTest - logging in with username and password: nano / nanopass
+2026-05-13 20:40:39 INFO  com.zproject.UltimateExampleTest - logging in with username and password: hank / hankpass
+2026-05-13 20:51:15 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:51:15 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:51:15 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:51:15 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:51:15 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:51:15 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:51:15 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 20:51:16 INFO  com.zproject.UltimateExampleTest - logging in with username and password: nano / nanopass
+2026-05-13 20:51:16 INFO  com.zproject.UltimateExampleTest - logging in with username and password: opopo / opopopass
+2026-05-13 20:51:18 INFO  com.zproject.UltimateExampleTest - logging in with username and password: merry / merrypass
+2026-05-13 20:51:18 INFO  com.zproject.UltimateExampleTest - logging in with username and password: mmdd / mmmdpass
+2026-05-13 20:51:18 INFO  com.zproject.UltimateExampleTest - logging in with username and password: alex / alexpass
+2026-05-13 20:51:18 INFO  com.zproject.UltimateExampleTest - logging in with username and password: mvnvmv / mvnvmvpass
+2026-05-13 20:51:19 INFO  com.zproject.UltimateExampleTest - logging in with username and password: hank / hankpass
+2026-05-13 21:06:54 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 21:06:54 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 21:06:54 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 21:06:54 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 21:06:54 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 21:06:54 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 21:06:54 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-13 21:06:57 INFO  com.zproject.UltimateExampleTest - logging in with username and password: opopo / opopopass
+2026-05-13 21:07:01 INFO  com.zproject.UltimateExampleTest - logging in with username and password: nano / nanopass
+2026-05-13 21:07:02 INFO  com.zproject.UltimateExampleTest - logging in with username and password: alex / alexpass
+2026-05-13 21:07:02 INFO  com.zproject.UltimateExampleTest - logging in with username and password: mmdd / mmmdpass
+2026-05-13 21:07:03 INFO  com.zproject.UltimateExampleTest - logging in with username and password: mvnvmv / mvnvmvpass
+2026-05-13 21:07:03 INFO  com.zproject.UltimateExampleTest - logging in with username and password: hank / hankpass
+2026-05-13 21:07:04 INFO  com.zproject.UltimateExampleTest - logging in with username and password: merry / merrypass
