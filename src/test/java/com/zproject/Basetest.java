@@ -10,6 +10,7 @@ public class Basetest {
     public void start(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
+        // check if headless or not 
         if (System.getProperty("browser") == null ){
             DriverManage.setDriver(new ChromeDriver());
         }
