@@ -33,6 +33,8 @@ public class UltimateExampleTest extends Basetest{
 
     @DataProvider(name = "dataProvider" , parallel = true)
     public Iterator<Object[]> dataProvider() throws SQLException {
+        //added 25 users
+        
         String url = "jdbc:mysql://localhost:3306/jdbc";
         String rootUsername = "root";
         String rootPassword = "root";
