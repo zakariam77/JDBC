@@ -8,15 +8,10 @@ import org.testng.annotations.BeforeMethod;
 public class Basetest {
     @BeforeMethod
     public void start(){
+        System.setProperty("webdriver.chrome.driver", "/home/chromedriver-linux64/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
-        // check if headless or not present
-        if (System.getProperty("browser") == null ){
-            DriverManage.setDriver(new ChromeDriver());
-        }
-        else if(System.getProperty("browser").contains("headless")) {
-            DriverManage.setDriver(new ChromeDriver(options));
-        }
+        DriverManage.setDriver(new ChromeDriver(options));
     }
    @AfterMethod
     public void stop(){

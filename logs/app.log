@@ -187,3 +187,39 @@
 2026-05-13 21:07:03 INFO  com.zproject.UltimateExampleTest - logging in with username and password: mvnvmv / mvnvmvpass
 2026-05-13 21:07:03 INFO  com.zproject.UltimateExampleTest - logging in with username and password: hank / hankpass
 2026-05-13 21:07:04 INFO  com.zproject.UltimateExampleTest - logging in with username and password: merry / merrypass
+2026-05-19 15:08:32 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-19 15:08:32 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-19 15:08:32 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-19 15:08:34 INFO  com.zproject.UltimateExampleTest - logging in with username and password: alex / alexpass
+2026-05-19 15:08:34 INFO  com.zproject.UltimateExampleTest - logging in with username and password: hank / hankpass
+2026-05-19 15:08:37 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-19 15:08:37 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-19 15:08:37 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-19 15:08:38 INFO  com.zproject.UltimateExampleTest - logging in with username and password: mmdd / mmmdpass
+2026-05-19 15:08:39 INFO  com.zproject.UltimateExampleTest - logging in with username and password: merry / merrypass
+2026-05-19 15:08:40 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-19 15:08:40 INFO  com.zproject.UltimateExampleTest - logging in with username and password: nano / nanopass
+2026-05-19 15:08:40 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-19 15:08:46 INFO  com.zproject.UltimateExampleTest - logging in with username and password: user8 / user8password
+2026-05-19 15:08:46 INFO  com.zproject.UltimateExampleTest - logging in with username and password: mvnvmv / mvnvmvpass
+2026-05-19 15:08:46 INFO  com.zproject.UltimateExampleTest - logging in with username and password: opopo / opopopass
+2026-05-19 15:11:40 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-19 15:11:40 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-19 15:11:40 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-19 15:11:40 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-05-19 15:11:44 INFO  com.zproject.UltimateExampleTest - logging in with username and password: hank / hankpass
+2026-05-19 15:11:44 INFO  com.zproject.UltimateExampleTest - logging in with username and password: nano / nanopass
+2026-05-19 15:11:45 INFO  com.zproject.UltimateExampleTest - logging in with username and password: merry / merrypass
+2026-05-19 15:11:45 INFO  com.zproject.UltimateExampleTest - logging in with username and password: alex / alexpass
+2026-07-15 15:46:58 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-07-15 15:46:59 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-07-15 15:47:00 INFO  com.zproject.UltimateExampleTest - logging in with username and password: username2 / password2
+2026-07-15 15:47:01 INFO  com.zproject.UltimateExampleTest - logging in with username and password: username1 / password1
+2026-07-15 15:48:15 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-07-15 15:48:15 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-07-15 15:48:17 INFO  com.zproject.UltimateExampleTest - logging in with username and password: username1 / password1
+2026-07-15 15:48:17 INFO  com.zproject.UltimateExampleTest - logging in with username and password: username2 / password2
+2026-07-15 15:54:21 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-07-15 15:54:21 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-07-15 15:54:24 INFO  com.zproject.UltimateExampleTest - logging in with username and password: username2 / password2
+2026-07-15 15:54:58 INFO  com.zproject.UltimateExampleTest - logging in with username and password: username1 / password1

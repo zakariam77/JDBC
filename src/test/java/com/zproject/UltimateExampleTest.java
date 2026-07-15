@@ -33,15 +33,14 @@ public class UltimateExampleTest extends Basetest{
 
     @DataProvider(name = "dataProvider" , parallel = true)
     public Iterator<Object[]> dataProvider() throws SQLException {
-        //added 25 users
-        
-        String url = "jdbc:mysql://localhost:3306/jdbc";
-        String rootUsername = "root";
-        String rootPassword = "root";
+
+        String url = "jdbc:mysql://localhost:3306/info";
+        String rootUsername = "zakaria";
+        String rootPassword = "Azerty----@2";
 
         Connection conn = DriverManager.getConnection(url, rootUsername, rootPassword);
         Statement statement = conn.createStatement();
-        ResultSet rs = statement.executeQuery("select username, passwords from info");
+        ResultSet rs = statement.executeQuery("select username, passwords from info2");
         List<Object[]> dataList = new ArrayList<>();
 
         while (rs.next()){
