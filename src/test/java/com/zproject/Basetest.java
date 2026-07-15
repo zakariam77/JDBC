@@ -6,8 +6,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class Basetest {
+    /*
     @BeforeMethod
     public void start(){
+
         System.setProperty("webdriver.chrome.driver", "/home/chromedriver-linux64/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
@@ -17,4 +19,6 @@ public class Basetest {
     public void stop(){
         DriverManage.endDriver();
     }
+
+     */
 }

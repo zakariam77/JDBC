@@ -24,11 +24,17 @@ public class UltimateExampleTest extends Basetest{
 
     @Test(dataProvider = "dataProvider")
     public void test(String name, String password) {
+        /*
         logger.info("instantiating chrome driver");
         DriverManage.getDriver().get("https://celebsarea.com/neo");
         logger.info("logging in with username and password: " + name + " / " + password);
         DriverManage.getDriver().findElement(By.id("user_login")).sendKeys(name);
         DriverManage.getDriver().findElement(By.id("user_pass")).sendKeys(password);
+
+         */
+
+        System.out.println(name);
+        System.out.println(password);
     }
 
     @DataProvider(name = "dataProvider" , parallel = true)
