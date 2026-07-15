@@ -24,29 +24,25 @@ public class UltimateExampleTest extends Basetest{
 
     @Test(dataProvider = "dataProvider")
     public void test(String name, String password) {
-        /*
+
         logger.info("instantiating chrome driver");
         DriverManage.getDriver().get("https://celebsarea.com/neo");
         logger.info("logging in with username and password: " + name + " / " + password);
         DriverManage.getDriver().findElement(By.id("user_login")).sendKeys(name);
         DriverManage.getDriver().findElement(By.id("user_pass")).sendKeys(password);
 
-         */
-
-        System.out.println(name);
-        System.out.println(password);
     }
 
     @DataProvider(name = "dataProvider" , parallel = true)
     public Iterator<Object[]> dataProvider() throws SQLException {
 
-        String url = "jdbc:mysql://localhost:3306/newdb";
-        String rootUsername = "zakaria";
-        String rootPassword = "Azerty----@2";
+        String url = "jdbc:mysql://localhost:3306/jdbc";
+        String rootUsername = "root";
+        String rootPassword = "root";
 
         Connection conn = DriverManager.getConnection(url, rootUsername, rootPassword);
         Statement statement = conn.createStatement();
-        ResultSet rs = statement.executeQuery("select username, passwords from info");
+        ResultSet rs = statement.executeQuery("select username, passwords from info2");
         List<Object[]> dataList = new ArrayList<>();
 
         while (rs.next()){

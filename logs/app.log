@@ -223,3 +223,7 @@
 2026-07-15 15:54:21 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
 2026-07-15 15:54:24 INFO  com.zproject.UltimateExampleTest - logging in with username and password: username2 / password2
 2026-07-15 15:54:58 INFO  com.zproject.UltimateExampleTest - logging in with username and password: username1 / password1
+2026-07-15 16:37:09 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-07-15 16:37:09 INFO  com.zproject.UltimateExampleTest - instantiating chrome driver
+2026-07-15 16:37:11 INFO  com.zproject.UltimateExampleTest - logging in with username and password: username1 / password1
+2026-07-15 16:37:11 INFO  com.zproject.UltimateExampleTest - logging in with username and password: username2 / password2

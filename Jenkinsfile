@@ -4,18 +4,10 @@ pipeline{
 
         tools{
                 jdk 'JDK21'
-                maven '3.6.31'
+                maven '3.6.3'
         }
 
         stages{
-
-        stage('clean'){
-        steps{
-
-        sh 'mvn clean'
-
-        }
-        }
         stage('build'){
         steps{
 
