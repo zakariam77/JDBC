@@ -11,6 +11,9 @@ pipeline{
             string(name: 'PROFILE', defaultValue: 'SqlTest', description: 'select_profile')
         }
         stages{
+        stage('cleaup') {
+            sh 'mvn clean'
+        }
         stage('build'){
         steps{
 
