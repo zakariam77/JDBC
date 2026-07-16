@@ -1,20 +1,19 @@
 package com.zproject;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
 public class Basetest {
-
+    static Logger logger = LogManager.getLogger(UltimateExampleTest.class);
     @BeforeMethod
     public void start() throws URISyntaxException, MalformedURLException {
     /*
@@ -37,7 +36,9 @@ public class Basetest {
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         // 3. Initialize the driver using the custom service and options
-        //temp testing remote webdriver to docker compose
+
+        //temporary testing remote webdriver to docker compose
+        logger.info("instantiating chrome driver");
         WebDriver driver = new RemoteWebDriver(new URI("http://172.19.0.2:4444").toURL(), options);
         DriverManage.setDriver(driver);
     }

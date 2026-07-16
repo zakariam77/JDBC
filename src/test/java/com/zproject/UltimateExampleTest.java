@@ -20,14 +20,12 @@ import java.util.Iterator;
 import java.util.List;
 
 public class UltimateExampleTest extends Basetest{
-    static Logger logger = LogManager.getLogger(UltimateExampleTest.class);
 
     @Test(dataProvider = "dataProvider")
     public void test(String name, String password) {
 
-        logger.info("instantiating chrome driver");
         DriverManage.getDriver().get("https://celebsarea.com/neo");
-        logger.info("logging in with username and password: " + name + " / " + password);
+        logger.info("logging in with username: {}", name);
         DriverManage.getDriver().findElement(By.id("user_login")).sendKeys(name);
         DriverManage.getDriver().findElement(By.id("user_pass")).sendKeys(password);
 
@@ -40,7 +38,9 @@ public class UltimateExampleTest extends Basetest{
         String rootUsername = "zakaria";
         String rootPassword = "Azerty----@2";
 
+        logger.info("connecting to mysql server url: {}", url);
         Connection conn = DriverManager.getConnection(url, rootUsername, rootPassword);
+        logger.info("mysql server connection success");
         Statement statement = conn.createStatement();
         ResultSet rs = statement.executeQuery("select username, passwords from info");
         List<Object[]> dataList = new ArrayList<>();
