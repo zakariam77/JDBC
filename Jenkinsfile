@@ -8,13 +8,13 @@ pipeline{
         }
 
         parameters {
-            string(name: 'profile', defaultValue: 'SqlTest', description: 'select profile')
+            string(name: 'PROFILE', defaultValue: 'SqlTest', description: 'select profile')
         }
         stages{
         stage('build'){
         steps{
 
-        sh 'mvn test -P${params.profile}'
+        sh 'mvn test -P${params.PROFILE}'
 
         }
         }
