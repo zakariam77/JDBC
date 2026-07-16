@@ -12,7 +12,10 @@ pipeline{
         }
         stages{
         stage('cleaup') {
-            sh 'mvn clean'
+        steps{
+                    sh 'mvn clean'
+
+        }
         }
         stage('build'){
         steps{
