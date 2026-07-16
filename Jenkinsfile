@@ -7,11 +7,14 @@ pipeline{
                 maven '3.6.3'
         }
 
+        parameters {
+            string(name: 'profile', defaultValue: 'SqlTest', description: 'select profile')
+        }
         stages{
         stage('build'){
         steps{
 
-        sh 'mvn test -PSqlTest'
+        sh 'mvn test -P${params.profile}'
 
         }
         }
@@ -20,7 +23,7 @@ pipeline{
         post{
         always {
             junit '**/target/surefire-reports/TEST-*.xml'
-            allure results [[path: 'target/allure-results']]
+            allure results: [[path: 'target/allure-results']]
         }
 
         success{
