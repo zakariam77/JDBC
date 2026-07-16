@@ -1,18 +1,23 @@
 package com.zproject;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 public class Basetest {
 
     @BeforeMethod
-    public void start(){
-
+    public void start() throws URISyntaxException, MalformedURLException {
+    /*
         // 1. Point to the Linux ARM64 ChromeDriver binary location
         // Common paths: "/usr/bin/chromedriver" or "/usr/lib/chromium-browser/chromedriver"
         File driverBinary = new File("/usr/bin/chromedriver");
@@ -21,18 +26,20 @@ public class Basetest {
                 .usingDriverExecutable(driverBinary)
                 .usingAnyFreePort()
                 .build();
+                */
 
         // 2. Point to the Chromium Browser instance
         ChromeOptions options = new ChromeOptions();
-        options.setBinary("/usr/bin/chromium-browser");
+       // options.setBinary("/usr/bin/chromium-browser");
 
         // Highly recommended flag configurations for headless environments (Docker/CI)
         options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-
         // 3. Initialize the driver using the custom service and options
-        DriverManage.setDriver(new ChromeDriver(service, options));
+        //temp testing remote webdriver to docker compose
+        WebDriver driver = new RemoteWebDriver(new URI("http://172.19.0.2:4444").toURL(), options);
+        DriverManage.setDriver(driver);
     }
    @AfterMethod
     public void stop(){

@@ -1,17 +1,18 @@
 package com.zproject;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DriverManage {
 
 
-    private static ThreadLocal<ChromeDriver> driver = new ThreadLocal<>();
+    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
 
-    public static void setDriver(ChromeDriver driverInstance){
+    public static void setDriver(WebDriver driverInstance){
         driver.set(driverInstance);
     }
-    public static ChromeDriver getDriver(){
+    public static WebDriver getDriver(){
         return driver.get();
     }
     public static void endDriver(){
