@@ -40,6 +40,7 @@ public class Basetest {
         //temporary testing remote webdriver to docker compose
         logger.info("instantiating chrome driver");
         WebDriver driver = new RemoteWebDriver(new URI("http://172.19.0.2:4444").toURL(), options);
+        logger.info(Thread.currentThread().getName());
         DriverManage.setDriver(driver);
     }
    @AfterMethod
