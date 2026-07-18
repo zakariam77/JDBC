@@ -21,13 +21,13 @@ pipeline{
         stage('docker compose down') {
         steps {
             echo 'stopping docker compose to avoid conflicts'
-            sh 'docker compose -f down'
+            sh 'docker compose down'
         }
         }
         stage('docker compse up') {
         steps {
             echo 'starting up docker compose'
-            sh 'docker compose -f up'
+            sh 'docker compose up'
         }
         }
         stage('Verify Deployment') {
