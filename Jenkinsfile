@@ -14,8 +14,8 @@ pipeline{
         */
 
         parameters {
-            string(name: 'PROFILE', defaultValue: 'SqlTest', description: 'select_profile')
-            string(name: 'BROWSER', defaultValue: 'Chrome', description: 'Browser_Type')
+            string(name: 'PROFILE', defaultValue: 'SqlTest', description: 'SqlTest | Regression')
+            string(name: 'BROWSER', defaultValue: 'Chrome', description: 'Default chrome | firefox')
         }
         stages{
         stage('docker compose down') {
