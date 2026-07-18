@@ -9,7 +9,7 @@ pipeline{
 
         environment {
         // Defines the path to your compose file if it is not in the root directory
-        COMPOSE_FILE = 'docker-compose.yml'
+        COMPOSE_FILE = 'docker-compose.yaml'
         }
 
 
