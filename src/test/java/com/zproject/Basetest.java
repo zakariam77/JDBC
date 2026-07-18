@@ -3,7 +3,10 @@ package com.zproject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.AbstractDriverOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -26,22 +29,37 @@ public class Basetest {
                 .usingAnyFreePort()
                 .build();
                 */
+        // 2. Point to the Chromium Browser instance or firefox
 
-        // 2. Point to the Chromium Browser instance
-        ChromeOptions options = new ChromeOptions();
-       // options.setBinary("/usr/bin/chromium-browser");
+        String browseType = System.getProperty("browser");
+        if (browseType.contains("firefox")){
+           FirefoxOptions options = new FirefoxOptions();
+            options.addArguments("--headless=new");
+            logger.info("instantiating Firefox driver");
+            //temporary testing remote webdriver to docker compose
+            WebDriver driver = new RemoteWebDriver(new URI("http://172.19.0.2:4444").toURL(), options);
+            logger.info("thread: {}",  Thread.currentThread().threadId());
+            DriverManage.setDriver(driver);
+        }
+        else {
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless=new");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            logger.info("instantiating chrome driver");
+            //temporary testing remote webdriver to docker compose
+            WebDriver driver = new RemoteWebDriver(new URI("http://172.19.0.2:4444").toURL(), options);
+            logger.info("thread number: {}",  Thread.currentThread().threadId());
+            DriverManage.setDriver(driver);
+        }
+
+         // options.setBinary("/usr/bin/chromium-browser");
 
         // Highly recommended flag configurations for headless environments (Docker/CI)
-        options.addArguments("--headless=new");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
+
         // 3. Initialize the driver using the custom service and options
 
-        //temporary testing remote webdriver to docker compose
-        logger.info("instantiating chrome driver");
-        WebDriver driver = new RemoteWebDriver(new URI("http://172.19.0.2:4444").toURL(), options);
-        logger.info("thread number: {}",  Thread.currentThread().threadId());
-        DriverManage.setDriver(driver);
+
     }
    @AfterMethod
     public void stop(){
