@@ -21,7 +21,7 @@ pipeline{
         stage('docker compose down') {
         steps {
             echo 'stopping docker compose to avoid conflicts'
-            sh 'sudo docker compose -f down'
+            sh 'docker compose -f down'
         }
         }
         stage('docker compse up') {
@@ -33,7 +33,7 @@ pipeline{
         stage('Verify Deployment') {
         steps {
             echo 'verifying docker is up'
-            sh 'sudo docker compose ps'
+            sh 'docker compose ps'
         }
         }
         stage('build cleaup') {
