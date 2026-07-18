@@ -18,6 +18,7 @@ pipeline{
             string(name: 'BROWSER', defaultValue: 'Chrome', description: 'Default chrome | firefox')
         }
         stages{
+        /*
         stage('docker compose down') {
         steps {
             echo 'stopping docker compose to avoid conflicts'
@@ -27,7 +28,7 @@ pipeline{
         stage('docker compse up') {
         steps {
             echo 'starting up docker compose'
-            sh 'docker compose -f ${env.COMPOSE_FILE} up'
+            sh 'docker compose -f ${env.COMPOSE_FILE} up -d'
         }
         }
         stage('Verify Deployment') {
@@ -35,7 +36,10 @@ pipeline{
             echo 'verifying docker is up'
             sh 'docker compose ps'
         }
+
         }
+        */
+
         stage('build cleaup') {
         steps{
               sh 'mvn clean'
