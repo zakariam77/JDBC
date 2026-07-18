@@ -31,8 +31,10 @@ public class Basetest {
                 */
         // 2. Point to the Chromium Browser instance or firefox
 
-        String browseType = System.getProperty("browser");
-        if (browseType.contains("firefox")){
+        String browseType = System.getProperty("browser") != null ? System.getProperty("browser") :
+                "chrome";
+
+        if (browseType.equalsIgnoreCase("firefox")){
            FirefoxOptions options = new FirefoxOptions();
             options.addArguments("--headless=new");
             logger.info("instantiating Firefox driver");
@@ -41,7 +43,7 @@ public class Basetest {
             logger.info("thread: {}",  Thread.currentThread().threadId());
             DriverManage.setDriver(driver);
         }
-        else {
+        else if(browseType.equalsIgnoreCase("chrome")) {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless=new");
             options.addArguments("--no-sandbox");
@@ -51,6 +53,10 @@ public class Basetest {
             WebDriver driver = new RemoteWebDriver(new URI("http://172.19.0.2:4444").toURL(), options);
             logger.info("thread number: {}",  Thread.currentThread().threadId());
             DriverManage.setDriver(driver);
+        }
+        else {
+            logger.error("browser not found / supported");
+            throw new RuntimeException();
         }
 
          // options.setBinary("/usr/bin/chromium-browser");
