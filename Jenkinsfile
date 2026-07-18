@@ -6,12 +6,12 @@ pipeline{
                 jdk 'JDK21'
                 maven '3.6.3'
         }
-        /*
+
         environment {
         // Defines the path to your compose file if it is not in the root directory
         COMPOSE_FILE = 'docker-compose.yml'
         }
-        */
+
 
         parameters {
             string(name: 'PROFILE', defaultValue: 'SqlTest', description: 'SqlTest | Regression')
@@ -21,13 +21,13 @@ pipeline{
         stage('docker compose down') {
         steps {
             echo 'stopping docker compose to avoid conflicts'
-            sh 'docker compose down'
+            sh 'docker compose -f ${env.COMPOSE_FILE} down'
         }
         }
         stage('docker compse up') {
         steps {
             echo 'starting up docker compose'
-            sh 'docker compose up'
+            sh 'docker compose -f ${env.COMPOSE_FILE} up'
         }
         }
         stage('Verify Deployment') {
