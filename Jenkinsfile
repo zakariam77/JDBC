@@ -19,16 +19,16 @@ pipeline{
         }
         stages{
 
-        stage('docker compose down') {
+        stage('stop grid') {
         steps {
             echo 'stopping docker compose to avoid conflicts'
-            sh 'docker compose -f /home/ubuntu/docker-compose.yaml down'
+            sh "docker compose -f ${env.COMPOSE_FILE} down"
         }
         }
         stage('docker compse up') {
         steps {
             echo 'starting up docker compose'
-            sh 'docker compose -f /home/ubuntu/docker-compose.yaml up -d'
+            sh "docker compose -f ${env.COMPOSE_FILE} up -d"
         }
         }
         stage('Verify Deployment') {
