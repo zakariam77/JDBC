@@ -18,17 +18,17 @@ pipeline{
             string(name: 'BROWSER', defaultValue: 'Chrome', description: 'Default chrome | firefox')
         }
         stages{
-        /*
+
         stage('docker compose down') {
         steps {
             echo 'stopping docker compose to avoid conflicts'
-            sh 'docker compose -f ${env.COMPOSE_FILE} down'
+            sh 'docker compose -f /home/ubuntu/docker-compose.yaml down'
         }
         }
         stage('docker compse up') {
         steps {
             echo 'starting up docker compose'
-            sh 'docker compose -f ${env.COMPOSE_FILE} up -d'
+            sh 'docker compose -f /home/ubuntu/docker-compose.yaml up -d'
         }
         }
         stage('Verify Deployment') {
@@ -38,7 +38,7 @@ pipeline{
         }
 
         }
-        */
+
 
         stage('build cleaup') {
         steps{
