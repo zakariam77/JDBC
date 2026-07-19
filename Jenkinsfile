@@ -55,6 +55,8 @@ pipeline{
 
             success{
                 echo 'Build Success'
+
+                // not configured yet
                 emailext (
                            to: '$DEFAULT_RECIPIENTS',
                            subject: "Success: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]",
@@ -64,6 +66,8 @@ pipeline{
         }
             failure{
                 echo 'Build Failed'
+
+                // not configured yet
                 emailext (
                             to: '$DEFAULT_RECIPIENTS',
                             subject: "Failure: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]",
