@@ -19,59 +19,57 @@ pipeline{
         }
         stages{
 
-        stage('stop grid') {
-        steps {
-            echo 'stopping docker compose to avoid conflicts'
-            sh "docker compose -f ${env.COMPOSE_FILE} down"
+        stage('Stop Existing Grid') {
+            steps {
+                echo 'Stopping docker compose to avoid conflicts'
+                sh "docker compose -f ${env.COMPOSE_FILE} down"
         }
         }
-        stage('docker compse up') {
-        steps {
-            echo 'starting up docker compose'
-            sh "docker compose -f ${env.COMPOSE_FILE} up -d"
+        stage('Launch Selenium Grid') {
+            steps {
+                echo 'Starting up ephemeral Selenium Grid'
+                sh "docker compose -f ${env.COMPOSE_FILE} up -d"
+                sh 'docker compose ps'
         }
-        }
-        stage('Verify Deployment') {
-        steps {
-            echo 'verifying docker is up'
-            sh 'docker compose ps'
         }
 
-        }
-
-
-        stage('build cleaup') {
-        steps{
-              sh 'mvn clean'
-
-        }
-        }
         stage('build'){
-        steps{
-
-        sh "mvn test -P${params.PROFILE} -Dbrowser=${params.BROWSER}"
+            steps{
+                echo 'Cleanup Existing Build'
+                sh 'mvn clean'
+                echo 'Running parallel TestNG suite'
+                sh "mvn test -P${params.PROFILE} -Dbrowser=${params.BROWSER}"
 
         }
         }
         }
 
         post{
-        always {
-            junit '**/target/surefire-reports/TEST-*.xml'
-            allure results: [[path: 'target/allure-results']]
-            emailext (
-               to: '$DEFAULT_RECIPIENTS',
-               subject: '$DEFAULT_SUBJECT',
-               body: '$DEFAULT_CONTENT',
-               attachLog: true
-            )
+            always {
+                echo 'Tearing down Selenium Grid to free system resources...'
+                sh 'docker compose -f docker-compose.yaml down'
+                echo 'Processing test results...'
+                junit '**/target/surefire-reports/TEST-*.xml'
+                allure results: [[path: 'target/allure-results']]
         }
 
-        success{
-        echo 'build success'
+            success{
+                echo 'Build Success'
+                emailext (
+                           to: '$DEFAULT_RECIPIENTS',
+                           subject: "Success: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]",
+                           body: 'Pipeline completed successfully. View reports in Jenkins.',
+                           attachLog: true
+                        )
         }
-        failure{
-        echo 'build fail'
+            failure{
+                echo 'Build Failed'
+                emailext (
+                            to: '$DEFAULT_RECIPIENTS',
+                            subject: "Failure: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]",
+                            body: 'Tests failed or pipeline crashed. Check console log.',
+                            attachLog: true
+                          )
         }
 
         }
