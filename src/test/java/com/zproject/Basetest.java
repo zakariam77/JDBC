@@ -48,7 +48,7 @@ public class Basetest {
             options.addArguments("--disable-dev-shm-usage");
             logger.info("instantiating chrome driver");
             //temporary testing remote webdriver to docker compose
-            WebDriver driver = new RemoteWebDriver(new URI("http://172.19.0.2:4444").toURL(), options);
+            WebDriver driver = new RemoteWebDriver(new URI("http://172.18.0.2:4444").toURL(), options);
             logger.info("thread number: {}",  Thread.currentThread().threadId());
             DriverManage.setDriver(driver);
         }
