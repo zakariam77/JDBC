@@ -36,7 +36,7 @@ public class UltimateExampleTest extends Basetest{
 
         String url = "jdbc:mysql://localhost:3306/newdb";
         String rootUsername = "ziko";
-        String rootPassword = "Azerty----@2";
+        String rootPassword = "Zakaria----@2";
 
         logger.info("connecting to mysql server url: {}", url);
         Connection conn = DriverManager.getConnection(url, rootUsername, rootPassword);
