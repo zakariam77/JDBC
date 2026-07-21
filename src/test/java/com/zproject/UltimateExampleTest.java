@@ -35,7 +35,7 @@ public class UltimateExampleTest extends Basetest{
     public Iterator<Object[]> dataProvider() throws SQLException {
 
         String url = "jdbc:mysql://localhost:3306/newdb";
-        String rootUsername = "zakaria";
+        String rootUsername = "ziko";
         String rootPassword = "Azerty----@2";
 
         logger.info("connecting to mysql server url: {}", url);

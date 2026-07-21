@@ -37,7 +37,7 @@ public class Basetest {
             options.addArguments("--headless=new");
             logger.info("instantiating Firefox driver");
             //temporary testing remote webdriver to docker compose
-            WebDriver driver = new RemoteWebDriver(new URI("http://172.19.0.2:4444").toURL(), options);
+            WebDriver driver = new RemoteWebDriver(new URI("http://172.18.0.2:4444").toURL(), options);
             logger.info("thread: {}",  Thread.currentThread().threadId());
             DriverManage.setDriver(driver);
         }
