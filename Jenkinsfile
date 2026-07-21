@@ -9,7 +9,7 @@ pipeline{
 
         environment {
         // Defines the path to your compose file if it is not in the root directory
-        COMPOSE_FILE = '/var/lib/jenkins/workspace/jdbc/docker-compose.yaml'
+        COMPOSE_FILE = 'docker-compose.yaml'
         }
 
 
