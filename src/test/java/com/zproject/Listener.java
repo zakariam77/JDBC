@@ -18,7 +18,8 @@ public class Listener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
 
-
+        byte[] src =  ((TakesScreenshot) DriverManage.getDriver()).getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment("screenshot_fail", new ByteArrayInputStream(src));
 
     }
 }
