@@ -55,8 +55,11 @@ public class Basetest {
             logger.info("thread number: {}",  Thread.currentThread().threadId());
             driver.manage().deleteAllCookies();
             driver.manage().window().setSize(new Dimension(1920, 1080));
-
-            DriverManage.setDriver(driver);
+            try{
+                DriverManage.setDriver(driver);
+            }catch (NullPointerException e){
+                logger.error(e.getMessage());
+            }
         }
         else {
             throw new RuntimeException("browser not supported");
