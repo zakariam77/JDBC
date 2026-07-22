@@ -36,14 +36,14 @@ public class UltimateExampleTest extends Basetest{
     public Iterator<Object[]> dataProvider() throws SQLException {
 
         String url = "jdbc:mysql://localhost:3306/jdbc";
-        String rootUsername = "root";
-        String rootPassword = "root";
+        String rootUsername = "ziko";
+        String rootPassword = "Zakaria----@2";
 
         logger.info("connecting to mysql server url: {}", url);
         Connection conn = DriverManager.getConnection(url, rootUsername, rootPassword);
         logger.info("mysql server connection success");
         Statement statement = conn.createStatement();
-        ResultSet rs = statement.executeQuery("select username, passwords from info2");
+        ResultSet rs = statement.executeQuery("select username, passwords from info");
         List<Object[]> dataList = new ArrayList<>();
 
         while (rs.next()){
