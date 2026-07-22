@@ -10,15 +10,7 @@ import org.testng.ITestResult;
 import java.io.ByteArrayInputStream;
 public class Listener implements ITestListener {
 
-    @Override
-    public void onTestStart(ITestResult result) {
-
-            byte[] screenshot =  ((TakesScreenshot) DriverManage.getDriver()).getScreenshotAs(OutputType.BYTES);
-        Allure.addAttachment(result.getName() + "_On_Start_Screenshot", "image/png", new ByteArrayInputStream(screenshot), ".png");
-
-    }
-
-    @Override
+  @Override
     public void onTestFailure(ITestResult result) {
 
             byte[] screenshot2 = ((TakesScreenshot) DriverManage.getDriver()).getScreenshotAs(OutputType.BYTES);
