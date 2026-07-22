@@ -10,10 +10,15 @@ import java.io.ByteArrayInputStream;
 public class Listener implements ITestListener {
 
     @Override
+    public void onTestStart(ITestResult result) {
+        byte[] src =  ((TakesScreenshot) DriverManage.getDriver()).getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment("screenshot_fail", new ByteArrayInputStream(src));
+    }
+
+    @Override
     public void onTestFailure(ITestResult result) {
 
-       byte[] src =  ((TakesScreenshot) DriverManage.getDriver()).getScreenshotAs(OutputType.BYTES);
-        Allure.addAttachment("screenshot_fail", new ByteArrayInputStream(src));
+
 
     }
 }
