@@ -36,9 +36,12 @@ pipeline{
         stage('build'){
             steps{
                 echo 'Cleanup Existing Build'
+                ansiColor('xterm'){
                 sh 'mvn clean'
                 echo 'Running parallel TestNG suite'
                 sh "mvn test -P${params.PROFILE} -Dbrowser=${params.BROWSER}"
+                }
+
 
         }
         }
