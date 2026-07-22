@@ -106,7 +106,7 @@
   <!-- Profiles -->
   <profiles>
     <profile>
-      <id>Regression</id>
+      <id>regression</id>
       <build>
         <pluginManagement>
           <plugins>
@@ -125,7 +125,7 @@
       </build>
     </profile>
     <profile>
-      <id>SqlTest</id>
+      <id>ultimate</id>
       <build>
         <defaultGoal>test pass with no errors</defaultGoal>
         <pluginManagement>

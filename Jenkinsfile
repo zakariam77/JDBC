@@ -14,7 +14,7 @@ pipeline{
 
 
         parameters {
-            string(name: 'PROFILE', defaultValue: 'SqlTest', description: 'SqlTest | Regression')
+            string(name: 'PROFILE', defaultValue: 'ultimate', description: 'ultimate | regression')
             string(name: 'BROWSER', defaultValue: 'Chrome', description: 'Default chrome | firefox')
         }
         stages{

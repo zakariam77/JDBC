@@ -1,7 +1,6 @@
 services:
   chrome:
-    image: selenium/node-chromium:nightly
-    platform: linux/aarch64
+    image: selenium/node-chrome:beta
     shm_size: 2gb
     depends_on:
       - selenium-hub
@@ -9,7 +8,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
 
   firefox:
-    image: selenium/node-firefox:beta
+    image: selenium/node-firefox:dev
     shm_size: 2gb
     depends_on:
       - selenium-hub
@@ -17,7 +16,7 @@ services:
       - SE_EVENT_BUS_HOST=selenium-hub
 
   selenium-hub:
-    image: selenium/hub:latest
+    image: selenium/hub:nightly 
     container_name: selenium-hub
     ports:
       - "4442:4442"

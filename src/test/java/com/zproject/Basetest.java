@@ -2,6 +2,7 @@ package com.zproject;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -37,8 +38,10 @@ public class Basetest {
             options.addArguments("--headless=new");
             logger.info("instantiating Firefox driver");
             //temporary testing remote webdriver to docker compose
-            WebDriver driver = new RemoteWebDriver(new URI("http://172.18.0.2:4444").toURL(), options);
+            WebDriver driver = new RemoteWebDriver(new URI("http://localhost:4444").toURL(), options);
             logger.info("thread: {}",  Thread.currentThread().threadId());
+            driver.manage().deleteAllCookies();
+            driver.manage().window().setSize(new Dimension(1920, 1080));
             DriverManage.setDriver(driver);
         }
         else if(browseType.equalsIgnoreCase("chrome")) {
@@ -48,13 +51,15 @@ public class Basetest {
             options.addArguments("--disable-dev-shm-usage");
             logger.info("instantiating chrome driver");
             //temporary testing remote webdriver to docker compose
-            WebDriver driver = new RemoteWebDriver(new URI("http://172.18.0.2:4444").toURL(), options);
+            WebDriver driver = new RemoteWebDriver(new URI("http://localhost:4444").toURL(), options);
             logger.info("thread number: {}",  Thread.currentThread().threadId());
+            driver.manage().deleteAllCookies();
+            driver.manage().window().setSize(new Dimension(1920, 1080));
+
             DriverManage.setDriver(driver);
         }
         else {
-            logger.error("browser not found / supported");
-            throw new RuntimeException();
+            throw new RuntimeException("browser not supported");
         }
 
          // options.setBinary("/usr/bin/chromium-browser");

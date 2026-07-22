@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -34,15 +35,15 @@ public class UltimateExampleTest extends Basetest{
     @DataProvider(name = "dataProvider" , parallel = true)
     public Iterator<Object[]> dataProvider() throws SQLException {
 
-        String url = "jdbc:mysql://localhost:3306/newdb";
-        String rootUsername = "ziko";
-        String rootPassword = "Zakaria----@2";
+        String url = "jdbc:mysql://localhost:3306/jdbc";
+        String rootUsername = "root";
+        String rootPassword = "root";
 
         logger.info("connecting to mysql server url: {}", url);
         Connection conn = DriverManager.getConnection(url, rootUsername, rootPassword);
         logger.info("mysql server connection success");
         Statement statement = conn.createStatement();
-        ResultSet rs = statement.executeQuery("select username, passwords from info");
+        ResultSet rs = statement.executeQuery("select username, passwords from info2");
         List<Object[]> dataList = new ArrayList<>();
 
         while (rs.next()){
