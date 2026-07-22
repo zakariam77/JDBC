@@ -11,15 +11,15 @@ public class Listener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        byte[] src =  ((TakesScreenshot) DriverManage.getDriver()).getScreenshotAs(OutputType.BYTES);
-        Allure.addAttachment("screenshot_fail", new ByteArrayInputStream(src));
+        byte[] screenshot =  ((TakesScreenshot) DriverManage.getDriver()).getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment(result.getName() + "_Failure_Screenshot", "image/png", new ByteArrayInputStream(screenshot), ".png");
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
 
-        byte[] src =  ((TakesScreenshot) DriverManage.getDriver()).getScreenshotAs(OutputType.BYTES);
-        Allure.addAttachment("screenshot_fail", new ByteArrayInputStream(src));
+        byte[] screenshot2 =  ((TakesScreenshot) DriverManage.getDriver()).getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment(result.getName() + "_Failure_Screenshot", "image/png", new ByteArrayInputStream(screenshot2), ".png");
 
     }
 }
