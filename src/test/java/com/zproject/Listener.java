@@ -12,22 +12,27 @@ public class Listener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        byte[] screenshot =  ((TakesScreenshot) DriverManage.getDriver()).getScreenshotAs(OutputType.BYTES);
+        if(DriverManage.getDriver() != null){
+
+            byte[] screenshot =  ((TakesScreenshot) DriverManage.getDriver()).getScreenshotAs(OutputType.BYTES);
         Allure.addAttachment(result.getName() + "_On_Start_Screenshot", "image/png", new ByteArrayInputStream(screenshot), ".png");
+    }
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
+        if(DriverManage.getDriver() != null) {
 
-        byte[] screenshot2 =  ((TakesScreenshot) DriverManage.getDriver()).getScreenshotAs(OutputType.BYTES);
-        Allure.addAttachment(result.getName() + "_Failure_Screenshot", "image/png", new ByteArrayInputStream(screenshot2), ".png");
-
+            byte[] screenshot2 = ((TakesScreenshot) DriverManage.getDriver()).getScreenshotAs(OutputType.BYTES);
+            Allure.addAttachment(result.getName() + "_Failure_Screenshot", "image/png", new ByteArrayInputStream(screenshot2), ".png");
+        }
     }
 
     @Override
     public void onFinish(ITestContext context) {
-        byte[] screenshot2 =  ((TakesScreenshot) DriverManage.getDriver()).getScreenshotAs(OutputType.BYTES);
-        Allure.addAttachment("_Finish_Screenshot", "image/png", new ByteArrayInputStream(screenshot2), ".png");
-
+        if(DriverManage.getDriver() != null){
+            byte[] screenshot2 =  ((TakesScreenshot) DriverManage.getDriver()).getScreenshotAs(OutputType.BYTES);
+            Allure.addAttachment("_Finish_Screenshot", "image/png", new ByteArrayInputStream(screenshot2), ".png");
+        }
     }
 }
