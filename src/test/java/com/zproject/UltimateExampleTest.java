@@ -29,6 +29,7 @@ public class UltimateExampleTest extends Basetest{
         logger.info("logging in with username: {}", name);
         DriverManage.getDriver().findElement(By.id("user_login")).sendKeys(name);
         DriverManage.getDriver().findElement(By.id("user_pass")).sendKeys(password);
+        Assert.assertTrue(false);
 
     }
 

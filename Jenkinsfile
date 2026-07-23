@@ -39,7 +39,7 @@ pipeline{
                 ansiColor('xterm'){
                 sh 'mvn clean'
                 echo 'Running parallel TestNG suite'
-                sh "mvn test -P${params.PROFILE} -Dbrowser=${params.BROWSER} -X"
+                sh "mvn test -P${params.PROFILE} -Dbrowser=${params.BROWSER}"
                 }
 
 
