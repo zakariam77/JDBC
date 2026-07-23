@@ -38,7 +38,8 @@ public class UltimateExampleTest extends Basetest{
 
         String url = "jdbc:mysql://localhost:3306/newdb";
         String rootUsername = "ziko";
-        String DB_Pass = System.getenv("DB-PASSWORD");
+        String DB_Pass = System.getenv("DB-PASSWORD") != null ? System.getenv("DB-PASSWORD") :
+               ConfigReader.getProperty("DB_Password");
         logger.info("connecting to mysql server url: {}", url);
         Connection conn = DriverManager.getConnection(url, rootUsername, DB_Pass);
         logger.info("mysql server connection success");
