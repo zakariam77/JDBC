@@ -3,7 +3,6 @@
 <suite name="All Test Suite" parallel="methods" thread-count="7">
     <listeners>
         <listener class-name="com.zproject.Listener"/>
-        <listener class-name="com.zproject.Retry"/>
     </listeners>
     <test verbose="2" preserve-order="true" name="SQL / DataProvider Test / Headless">
         <classes>
