@@ -38,10 +38,9 @@ public class UltimateExampleTest extends Basetest{
 
         String url = "jdbc:mysql://localhost:3306/newdb";
         String rootUsername = "ziko";
-        String rootPassword = "Zakaria----@2";
-
+        String DB_Pass = System.getenv("DB-PASSWORD");
         logger.info("connecting to mysql server url: {}", url);
-        Connection conn = DriverManager.getConnection(url, rootUsername, rootPassword);
+        Connection conn = DriverManager.getConnection(url, rootUsername, DB_Pass);
         logger.info("mysql server connection success");
         Statement statement = conn.createStatement();
         ResultSet rs = statement.executeQuery("select username, passwords from info");
