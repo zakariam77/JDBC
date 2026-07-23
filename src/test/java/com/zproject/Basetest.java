@@ -17,7 +17,7 @@ import java.net.URISyntaxException;
 public class Basetest {
     static Logger logger = LogManager.getLogger(UltimateExampleTest.class);
     @BeforeMethod
-    public void start() throws URISyntaxException, MalformedURLException {
+    public void baseTestStart() throws URISyntaxException, MalformedURLException {
     /*
         // 1. Point to the Linux ARM64 ChromeDriver binary location
         // Common paths: "/usr/bin/chromedriver" or "/usr/lib/chromium-browser/chromedriver"
@@ -69,7 +69,7 @@ public class Basetest {
 
     }
    @AfterMethod
-    public void stop(){
+    public void baseTestStop(){
         DriverManage.endDriver();
     }
 
