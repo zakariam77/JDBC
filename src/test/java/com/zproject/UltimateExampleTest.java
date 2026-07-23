@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
+import org.testng.IRetryAnalyzer;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
