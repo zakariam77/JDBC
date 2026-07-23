@@ -1,2 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="C:/work/QA/JDBC"><classes><class name="com.zproject.AuthenticationPopup"><methods><include name="popup"/></methods></class><class name="com.zproject.DatabaseConnect"><methods><include name="JDBC"/></methods></class><class name="com.zproject.DownloadVerifyFiles"><methods><include name="verifyDownloads"/></methods></class><class name="com.zproject.FileUpload"><methods><include name="fileUpload"/></methods></class><class name="com.zproject.UltimateExampleTest"><methods><include name="test"/></methods></class></classes></test></suite>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/work/QA/JDBC">
+        <classes>
+            <class name="com.zproject.AuthenticationPopup">
+                <methods>
+                    <include name="popup"/>
+                </methods>
+            </class>
+            <class name="com.zproject.DatabaseConnect">
+                <methods>
+                    <include name="JDBC"/>
+                </methods>
+            </class>
+            <class name="com.zproject.DownloadVerifyFiles">
+                <methods>
+                    <include name="verifyDownloads"/>
+                </methods>
+            </class>
+            <class name="com.zproject.FileUpload">
+                <methods>
+                    <include name="fileUpload"/>
+                </methods>
+            </class>
+            <class name="com.zproject.UltimateExampleTest">
+                <methods>
+                    <include name="test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
