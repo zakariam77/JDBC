@@ -39,7 +39,10 @@ public class UltimateExampleTest extends Basetest{
 
         String url = "jdbc:mysql://localhost:3306/newdb";
         String rootUsername = "ziko";
-        String DB_Pass = System.getenv("DB-PASSWORD");
+        String DB_Pass = System.getenv("db_password");
+        if(DB_Pass == null || DB_Pass.isEmpty()){
+            System.out.println("database password is not set in jenkins");
+        }
         logger.info("connecting to mysql server url: {}", url);
         Connection conn = DriverManager.getConnection(url, rootUsername, DB_Pass);
         logger.info("mysql server connection success");

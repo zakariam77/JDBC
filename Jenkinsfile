@@ -10,6 +10,8 @@ pipeline{
         environment {
         // Defines the path to your compose file if it is not in the root directory
         COMPOSE_FILE = 'docker-compose.yaml'
+        // set the credential in jenkins, jvm reads it system.getenv
+        db_password = credentials('DB-PASSWORD')
         }
 
 
