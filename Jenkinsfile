@@ -39,7 +39,7 @@ pipeline{
                 ansiColor('xterm'){
                 sh 'mvn clean'
                 echo 'Running parallel TestNG suite'
-                sh "mvn test -P${params.PROFILE} -Dbrowser=${params.BROWSER} -e"
+                sh "mvn test -P${params.PROFILE} -Dbrowser=${params.BROWSER}"
                 }
 
 
@@ -51,7 +51,6 @@ pipeline{
             always {
                 echo 'Tearing down Selenium Grid to free system resources...'
                 sh 'docker compose -f docker-compose.yaml down'
-                echo 'Processing test results...'
                 junit '**/target/surefire-reports/TEST-*.xml'
                 allure results: [[path: 'target/allure-results']]
         }

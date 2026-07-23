@@ -40,7 +40,6 @@ public class Basetest {
             //temporary testing remote webdriver to docker compose
             WebDriver driver = new RemoteWebDriver(new URI("http://localhost:4444").toURL(), options);
             logger.info("thread: {}",  Thread.currentThread().threadId());
-            driver.manage().deleteAllCookies();
             driver.manage().window().setSize(new Dimension(1920, 1080));
             DriverManage.setDriver(driver);
         }
@@ -53,13 +52,9 @@ public class Basetest {
             //temporary testing remote webdriver to docker compose
             WebDriver driver = new RemoteWebDriver(new URI("http://localhost:4444").toURL(), options);
             logger.info("thread number: {}",  Thread.currentThread().threadId());
-            driver.manage().deleteAllCookies();
             driver.manage().window().setSize(new Dimension(1920, 1080));
-            try{
-                DriverManage.setDriver(driver);
-            }catch (NullPointerException e){
-                logger.error(e.getMessage());
-            }
+            DriverManage.setDriver(driver);
+
         }
         else {
             throw new RuntimeException("browser not supported");
